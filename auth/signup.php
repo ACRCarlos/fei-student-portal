@@ -49,8 +49,8 @@ if (isset($_POST)) {
         }
     } else {
         $_SESSION['errors'] = $errors;
-        echo implode(', ', $_SESSION['errors']);;
+        echo implode(', ', $_SESSION['errors']);
     }
 }
 
-header('Location: ../index.php');
+header('Location: ../login.php');

@@ -22,17 +22,30 @@
 
                             <hr>
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" />
-                            </div>
+                            <?php if (isset($_SESSION['completed'])) : ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <?php echo $_SESSION['completed']; ?>
+                                </div>
+                            <?php elseif (isset($_SESSION['errors']['general'])) : ?>
+                                <div class="alert alert-error"><?php echo $_SESSION['errors']['general']; ?></div>
+                            <?php endif; ?>
 
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" />
-                            </div>
+                            <form action="auth/signin.php" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email" name="email" />
+                                </div>
 
-                            <div class="form-group">
-                                <input type="submit" value="submit" class="btn btn-success btn-block">
-                            </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="submit" class="btn btn-success btn-block">
+                                </div>
+                            </form>
 
                         </div>
                     </div>

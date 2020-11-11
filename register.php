@@ -22,12 +22,6 @@
 
                             <hr>
 
-                            <?php if (isset($_SESSION['completed'])) : ?>
-                                <div class="alert alert-success"><?php echo $_SESSION['completed']; ?></div>
-                            <?php elseif (isset($_SESSION['errors']['general'])) : ?>
-                                <div class="alert alert-error"><?php echo $_SESSION['errors']['general']; ?></div>
-                            <?php endif; ?>
-
                             <form action="auth/signup.php" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Name" name="name" />
